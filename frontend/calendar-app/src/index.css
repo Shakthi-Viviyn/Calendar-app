@@ -1,13 +1,33 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1{
+    margin: 0;
+    font-family: 'Dm Sans', sans-serif;
+}
+h2{
+    margin: 0;
+    font-family: 'Dm Sans', sans-serif;
+}
+h3{
+    margin: 0;
+    font-family: 'Dm Sans', sans-serif;
+}
+h4{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+h5{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+h6{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+p{
+    margin: 0;
 }
