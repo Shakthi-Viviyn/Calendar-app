@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/home.css';
+import '../styles/home.scss';
 
-export default function SideBarItem({hasUpdates,groupImage}){
+export default function SideBarIcon({hasUpdates,groupImage}){
 
     const IconStyles = {
         backgroundImage: `url('${groupImage}')`,

@@ -1,21 +1,18 @@
 import React from 'react';
-import '../styles/home.css';
-import SideBarItem from './SideBarItem';
-
+import '../styles/home.scss';
+import SideBarIcon from './SideBarIcon';
+import SideBarBottom from './SideBarBottom';
 
 export default function SideBar(){
 
     return (
         <div className="sidebar-container">
-            <SideBarItem hasUpdates={true} groupImage="google.jpg"/>
-            <SideBarItem hasUpdates={true} groupImage="smartGuy.jpeg"/>
-            <SideBarItem hasUpdates={false}/>
-            <SideBarItem hasUpdates={false}/>
-            <SideBarItem hasUpdates={true}/>
-            <div className="sidebar-bottom">
-                <hr/>
-                <SideBarItem hasUpdates={false}/>
-            </div>
+            <SideBarIcon hasUpdates={true} groupImage="google.jpg"/>
+            <SideBarIcon hasUpdates={true} groupImage="smartGuy.jpeg"/>
+            <SideBarIcon hasUpdates={false}/>
+            <SideBarIcon hasUpdates={false}/>
+            <SideBarIcon hasUpdates={true}/>
+            <SideBarBottom/>
         </div>
     );
 }
