@@ -82,6 +82,7 @@
 }
 
 .calendar-container{
+    display: inline-block;
     order: 2;
     flex-grow: 1;
     
@@ -92,9 +93,9 @@
     flex-direction: column;
     padding: 50px;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    width: 500px;
+    width: 600px;
     order: 3;
     background-color: #e8e8e8;
     box-shadow: -5px 0 15px -15px rgba(0, 0, 0, 0.5);
