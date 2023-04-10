@@ -15,6 +15,7 @@ export default function RightPane() {
     return (
         <div className="right-pane-container">
             <MiniCalendar onChange={handleClick}/>
+            <h2>{selectedDate}</h2>
         </div>
     )
 }

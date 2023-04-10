@@ -100,10 +100,86 @@
     background-color: #e8e8e8;
     box-shadow: -5px 0 15px -15px rgba(0, 0, 0, 0.5);
 
-    .react-calendar{
-        border-radius: 3%;
-        scale: 1.3;
-    }
+    .mini-calendar-container{
+        background-color: white;
+        border-radius: 7%;
+        padding: 20px;
+
+        .month-switcher-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+            font-family: 'DMSans', sans-serif;
+
+            .buttons-container{
+                display: inherit;
+                flex-direction: inherit;
+                align-items: inherit;
+
+                .buttons{
+                    font-size: 30px;
+                    background-color: white;
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 10px;
+                    
+                    &:hover{
+                        background-color: lightgrey;
+                        border-radius: 25%;
+                    }
+                }
+            }  
+        }
+
+        .mini-calendar{
+            border-collapse: separate;
+            text-align: center;
+
+
+            thead{
+                font-family: 'DMSans', sans-serif;
+                font-weight: 200;
+                th{
+                    font-weight: normal;
+                    color: grey;
+                    width: 30px;
+                    height: 30px;
+                    padding: 5px;
+                }
+            }
+            tbody{
+                font-family: 'Poppins', sans-serif;
+                font-weight: normal;
+
+                td{
+                    width: 30px;
+                    height: 30px;
+                    padding: 5px;
+                    position: relative; /* Make the cell a positioned container */
+                    text-align: center; /* Center the content horizontally */
+                    vertical-align: middle; /* Center the content vertically */
+                }
+                .date-cell{
+                    &:hover{
+                        background-color: lightgrey;
+                        border-radius: 50%;
+                    }
+                    span{
+                        position: absolute; 
+                        bottom: 0; 
+                        left: 50%; 
+                        transform: translateX(-50%); 
+                        font-size: 3rem; 
+                        line-height: 2.5rem;
+                    }
+                }
+            }
+            
+        }
+    } 
+        
     
 }
 
