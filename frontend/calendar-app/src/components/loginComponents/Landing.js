@@ -12,9 +12,8 @@ export default function Landing(){
                     <h1>Ace your exams..<span>!</span></h1>
                     <h3>Plan anything with ease</h3>
                 </div>
-                <div className="graphic"/></div>
-            </div>    
+            </div>
+            {/* <div className="graphic"/> */}
         </div>
-        
     )
 }
