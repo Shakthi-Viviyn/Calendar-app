@@ -174,24 +174,96 @@
 
 }
 
-// .calendar-container{
-//     display: inline-block;
-//     order: 2;
-//     flex-grow: 1;
-//     table {
-//         border-collapse: collapse;
-//         width: 100%;
-//       }
-    
-//       td, th {
-//         padding: 8px;
-//         text-align: center;
-//       }
-    
-//       tr:nth-child(even) {
-//         background-color: #f2f2f2;
-//       }
-// }
+.group-add-page-container{
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 25px;
+    .close-btn-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        button{
+            background-size: cover;
+            background-position: center;
+            background-color: white;
+            height: 35px;
+            width: 35px;
+            border: none;
+            border-radius: 25px;
+            &:hover{
+                background-color: lightgray;
+                opacity: 0.8;
+            }
+        }
+    }
+    .sub-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+    .form-selector{
+        button{
+            height: 10rem;
+            width: 25rem;
+            font-size: 25px;
+            font-family: 'Dm Sans',sans-serif;
+            border-radius: 10px;
+            border: outset;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 20px;
+        } 
+    }
+    .group-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .box{
+            margin-bottom: 40px;
+            height: 30px;
+            width: 200px;
+            border: 1px solid grey;
+            font-size: 16px;
+            background-color: white;
+            font-family: sans-serif;
+            padding-left: 10px;
+            padding-right: 10px;
+            &:focus{
+                outline: none;
+            }
+        }
+        .submit-btn{
+            height: 30px;
+            width: 200px;
+            font-size: 16px;
+            border: outset;
+            font-family: 'Dm Sans',sans-serif;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        #link{
+            font-family: sans-serif;
+            color: darkblue;
+            font-size: 12px;
+        }
+    }
+}
 
 .right-pane-container{
     display: flex;
@@ -266,9 +338,9 @@
                     min-width: 30px;
                     height: 30px;
                     padding: 5px;
-                    position: relative; /* Make the cell a positioned container */
-                    text-align: center; /* Center the content horizontally */
-                    vertical-align: middle; /* Center the content vertically */
+                    position: relative;
+                    text-align: center;
+                    vertical-align: middle; 
                 }
                 .date-cell{
                     &:hover{
@@ -291,17 +363,3 @@
         
     
 }
-
-
-
-
-
-/* .navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 20px;
-    height: 50px;
-    background-color: #E4E5E6;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-} */
