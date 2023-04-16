@@ -9,6 +9,7 @@
     box-sizing: border-box;
     padding: 25px;
     border-radius: 15px;
+    z-index: 2;
 
     h4{
         font-weight: 500;
@@ -68,7 +69,7 @@
 
     .main-container{
         position: absolute;
-        top: 8%;
+        top: 80px;
         right: 0;
         bottom: 0;
         left: 0;
@@ -186,6 +187,19 @@
 
             &:hover{
                 opacity: 0.8;
+            }
+        }
+
+        p{
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            font-size: 14px;
+            span{
+                color: #1e3e5a;
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
         }
     }

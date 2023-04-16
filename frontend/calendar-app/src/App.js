@@ -1,33 +1,25 @@
 import './App.scss';
-import SideBar from './components/SideBar';
-// import NavBar from './components/NavBar';
-import RightPane from './components/RightPane';
-import Calendar from './components/Calendar';
+import HomeMain from './components/homeComponents/HomeMain';
 import Landing from './components/loginComponents/Landing';
 import Login from './components/loginComponents/Login';
 import SignUp from './components/loginComponents/SignUp';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import AddGroup from './components/homeComponents/AddGroup';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 function App() {
+
   return (
     <Router>
-      <Landing/>
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={SignUp} />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element= {<Landing/>} />
+        <Route path="/login" element= {<Login/>} />
+        <Route path="/signup" element= {<SignUp/>} />
+        <Route path="/home" element= {<HomeMain/>}/>
+        <Route path="/add" element={<AddGroup />} />
+      </Routes>
     </Router>
-    // <>
-    //   <div className="home-container">
-    //     <SideBar/>
-    //     <Calendar/>
-    //     <RightPane/>
-    //   </div>
-    // </>
-    
-  );
+  )
 }
 
 export default App;

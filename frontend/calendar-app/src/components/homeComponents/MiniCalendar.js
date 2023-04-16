@@ -28,7 +28,7 @@ export default function MiniCalendar({onChange, eventDetails}){
 
         let eventDates = eventDetails.map((eventObj => (eventObj.date)));
         
-        const [calendarDate,setCalendarDate] = useState(moment("2023-03-01"));
+        const [calendarDate,setCalendarDate] = useState(moment());
 
         let weekdayShort = moment.weekdaysShort();
         let weekdayShortElements = weekdayShort.map((day)=>(
@@ -47,15 +47,15 @@ export default function MiniCalendar({onChange, eventDetails}){
         
         //Adds blanks cells for first row before the first day of the month is reached
         for (let i=0;i < firstDay; i++){
-            days.push(<td>{""}</td>);
+            days.push(<td key={"s" + i}>{""}</td>);
         }
         //Adds all the dates in the month
         for (let i=1; i <= currentDate.daysInMonth(); i++){
-            days.push(<td id={i} onClick={handleClick} className="date-cell">{i}{eventDates.includes(i) && <span style={{color: eventDetails[eventDates.indexOf(i)].color}}>.</span>}</td>);
+            days.push(<td key={i} id={i} onClick={handleClick} className="date-cell">{i}{eventDates.includes(i) && <span style={{color: eventDetails[eventDates.indexOf(i)].color}}>.</span>}</td>);
         }
         //Fills the remainder of last row with blank cells 
         for (let i = moment(currentDate).endOf("month").format("d"); i < 6 ; i++){
-            days.push(<td>{""}</td>);
+            days.push(<td key={"e" + i}>{""}</td>);
         }
 
         //Breaks dates in sets of 7 (one week)
@@ -66,7 +66,7 @@ export default function MiniCalendar({onChange, eventDetails}){
         }
 
         //Appends <tr> elements at start and end of rows
-        let dayRows = setsOfSeven.map((row) => (<tr>{row}</tr>))
+        let dayRows = setsOfSeven.map((row) => (<tr key={setsOfSeven.indexOf(row)}>{row}</tr>))
 
         //Function to update the state of parent when a date is clicked
         function handleClick(e){

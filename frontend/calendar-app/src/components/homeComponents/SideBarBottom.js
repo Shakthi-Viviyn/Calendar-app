@@ -1,5 +1,5 @@
 import React , {useState} from 'react';
-import '../styles/home.scss';
+
 
 export default function SideBarBottom({profileImage}) {
 

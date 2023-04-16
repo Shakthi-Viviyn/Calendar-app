@@ -1,16 +1,16 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function NavBar(){
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     function handleSignUp(){
-        history.push("/signup");
+        navigate("/signup");
     }
 
     function handleLogin(){
-        history.push("/login");
+        navigate("/login");
     }
 
 

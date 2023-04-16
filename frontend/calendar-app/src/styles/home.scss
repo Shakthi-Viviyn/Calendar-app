@@ -1,3 +1,11 @@
+@import 'react-big-calendar/lib/sass/styles';
+@import 'react-big-calendar/lib/addons/dragAndDrop/styles';
+
+.home-container{
+    display: flex;
+    flex-direction: row;
+}
+
 .sidebar-container{
     background-color: lightblue;
     display: flex;
@@ -6,8 +14,9 @@
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
-    width: 80px;
-    min-height: 96vh;
+    min-width: 80px;
+    min-height: 100vh;
+    box-sizing: border-box;
     order: 1;
 
     .icon{
@@ -18,7 +27,7 @@
         height: 50px;
         border-radius: 50%;
         background-color: grey;
-
+        
         &:hover{
             cursor: pointer;
             opacity: 0.8;
@@ -28,11 +37,10 @@
             position: absolute;
             top: 40px;
             left: 36px;
-            border: solid 1px black;
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: red;
+            background-color: #d13d32;
         }
     }
 
@@ -81,21 +89,118 @@
 
 }
 
-.calendar-container{
-    display: inline-block;
+.big-calendar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 10px;
+    width: 100%;
+    height: 100vh;
     order: 2;
-    flex-grow: 1;
+    font-family: sans-serif;
+    box-sizing: border-box;
+
+    .calendar-container{
+        width: 100%;
+
+        .calendar-toolbar{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px 20px 30px;
     
+            h3{
+                font-family: 'DM Sans', sans-serif;
+            }
+    
+            .navigate-button{
+                background-color: white;
+                width: 35px;
+                height: 35px;
+                &:hover{
+                    background-color: lightgrey;
+                    border-radius: 5px;
+                }
+            }
+            .views-button-container{
+                border: 1px solid lightgrey;
+                padding:10px;
+                border-radius: 5px;
+    
+                .view-button{
+                    height: 35px;
+                    min-width: 45px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: white;
+                    font-size: 16px;
+    
+                    &:hover{
+                        background-color: lightgrey;
+                        border-radius: 5px;
+                    }
+                }
+                .active{
+                    background-color: lightgrey;
+                    border-radius: 5px;
+                }
+            }
+            
+            .mr{
+                margin-right: 30px;
+            }
+            .ml{
+                margin-left: 20px;
+            }
+            
+        }
+        .rbc-time-header-content{
+            .rbc-header{
+                border-bottom: none;
+            }
+            .rbc-allday-cell{
+                display: none;
+            }
+        }
+        
+        .rbc-time-slot {
+            border: none;
+          }
+    }
+
 }
+
+// .calendar-container{
+//     display: inline-block;
+//     order: 2;
+//     flex-grow: 1;
+//     table {
+//         border-collapse: collapse;
+//         width: 100%;
+//       }
+    
+//       td, th {
+//         padding: 8px;
+//         text-align: center;
+//       }
+    
+//       tr:nth-child(even) {
+//         background-color: #f2f2f2;
+//       }
+// }
 
 .right-pane-container{
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 30px;
     box-sizing: border-box;
     justify-content: flex-start;
     align-items: center;
-    width: 600px;
+    width: 400px;
     order: 3;
     background-color: #e8e8e8;
     box-shadow: -5px 0 15px -15px rgba(0, 0, 0, 0.5);
@@ -158,7 +263,7 @@
                 font-weight: normal;
 
                 td{
-                    width: 30px;
+                    min-width: 30px;
                     height: 30px;
                     padding: 5px;
                     position: relative; /* Make the cell a positioned container */
@@ -168,7 +273,7 @@
                 .date-cell{
                     &:hover{
                         background-color: lightgrey;
-                        border-radius: 50%;
+                        border-radius: 30px;
                     }
                     span{
                         position: absolute; 
