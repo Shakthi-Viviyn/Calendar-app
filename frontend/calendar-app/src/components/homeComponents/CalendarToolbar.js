@@ -11,7 +11,7 @@ export default function CalendarToolbar({view, onView, onNavigate, currentDate, 
             </div>
             <h3>{label}</h3>
             <div className="views-button-container">
-                <button className={"view-button" + (view === 'day' ? ' active' : '')} onClick={() => onView('day')}>Day</button>
+                <button id="date-view-btn" className={"view-button" + (view === 'day' ? ' active' : '')} onClick={() => onView('day')}>Day</button>
                 <button className={"ml view-button" + (view === 'week' ? ' active' : '')} onClick={() => onView('week')}>Week</button>
             </div>
         </div>

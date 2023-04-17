@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useState, useEffect} from 'react';
 import "../../styles/home.scss";
 import moment from 'moment';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
@@ -6,7 +6,17 @@ import CalendarToolbar from './CalendarToolbar';
 
 const localizer = momentLocalizer(moment);
 
-export default function CalendarPane() {
+export default function CalendarPane({showDate}) {
+
+  const [date, setDate] = useState(showDate);
+
+  useEffect((() => {
+    setDate(showDate);
+    document.getElementById("date-view-btn").click();
+  }),[showDate]);
+
+  console.log(date);
+
 
   let events = [{
     title: "meeting",
@@ -58,6 +68,15 @@ export default function CalendarPane() {
     []
   )
 
+  const AddIconStyles = {
+    backgroundImage: `url('images/icons/plus.png')`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundColor: "lightgreen"
+  }
+
+  const onNavigate = (newDate) => setDate(newDate);
+
   return(
     <div className='big-calendar-container'>
       <Calendar
@@ -67,8 +86,9 @@ export default function CalendarPane() {
           // startAccessor="start"
           // endAccessor="end"
           views={['week','day']}
-          defaultView={'week'}
-          popup={true}
+          date={date}
+          onNavigate={onNavigate}
+          defaultView={'day'}
           formats={formats}
           components={{
             toolbar: CalendarToolbar
@@ -76,9 +96,8 @@ export default function CalendarPane() {
           className='calendar-container'
           dayLayoutAlgorithm={'no-overlap'}
       />
-      </div>
-
-    
+      <button style={AddIconStyles} id="add-event-btn"></button>
+    </div>
   )
 }
 

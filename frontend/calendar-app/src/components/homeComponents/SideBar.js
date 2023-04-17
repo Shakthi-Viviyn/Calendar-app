@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/home.scss';
-import SideBarIcon from './SideBarIcon';
-import SideBarBottom from './SideBarBottom';
+import SideBarIcon from './sideBarComponents/SideBarIcon';
+import SideBarBottom from './sideBarComponents/SideBarBottom';
 import { useNavigate } from 'react-router-dom';
 
 export default function SideBar({updateView}) {

@@ -4,18 +4,11 @@ import '../../styles/home.scss';
 import 'react-calendar/dist/Calendar.css';
 import MiniCalendar from './MiniCalendar';
 
-export default function RightPane() {
-
-    const [selectedDate, setSelectedDate] = useState("")
-
-    function handleClick(value){
-        setSelectedDate(value);
-    }
+export default function RightPane({handleDateChange}) {
 
     return (
         <div className="right-pane-container">
-            <MiniCalendar onChange={handleClick}/>
-            <h2>{selectedDate}</h2>
+            <MiniCalendar onChange={handleDateChange}/>
         </div>
     )
 }

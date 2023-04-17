@@ -95,6 +95,7 @@
     justify-content: flex-start;
     align-items: center;
 
+    position: relative;
     padding: 10px;
     width: 100%;
     height: 100vh;
@@ -166,10 +167,19 @@
                 display: none;
             }
         }
-        
         .rbc-time-slot {
             border: none;
-          }
+        }
+
+    }
+    #add-event-btn{
+        position: absolute;
+        bottom: 40px;
+        right: 50px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: none;
     }
 
 }
