@@ -3,6 +3,7 @@ import "../../styles/home.scss";
 import moment from 'moment';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import CalendarToolbar from './CalendarToolbar';
+import EventAddForm from './EventAddForm';
 
 const localizer = momentLocalizer(moment);
 
@@ -77,27 +78,43 @@ export default function CalendarPane({showDate}) {
 
   const onNavigate = (newDate) => setDate(newDate);
 
+  const [isAddFormShown, setIsAddFormShown] = useState(false);
+  const handleAddClick = () => {
+    setIsAddFormShown(true);
+  }
+
+  const TimeGridHeader = ({ date }) => {
+    return (<div className="time-grid-header">
+              <span>{moment(date).format('DD')}</span>
+              {moment(date).format('ddd')}
+            </div>);
+  };
+
   return(
-    <div className='big-calendar-container'>
-      <Calendar
-          localizer={localizer}
-          events={events}
-          onSelectEvent={handleEventClick}
-          // startAccessor="start"
-          // endAccessor="end"
-          views={['week','day']}
-          date={date}
-          onNavigate={onNavigate}
-          defaultView={'day'}
-          formats={formats}
-          components={{
-            toolbar: CalendarToolbar
-          }}
-          className='calendar-container'
-          dayLayoutAlgorithm={'no-overlap'}
-      />
-      <button style={AddIconStyles} id="add-event-btn"></button>
-    </div>
+    <>
+      <div className='big-calendar-container'>
+        <Calendar
+            localizer={localizer}
+            events={events}
+            onSelectEvent={handleEventClick}
+            // startAccessor="start"
+            // endAccessor="end"
+            views={['week','day']}
+            date={date}
+            onNavigate={onNavigate}
+            defaultView={'day'}
+            formats={formats}
+            components={{
+              toolbar: CalendarToolbar,
+              header: TimeGridHeader
+            }}
+            className='calendar-container'
+            dayLayoutAlgorithm={'no-overlap'}
+        />
+        <button style={AddIconStyles} id="add-event-btn" onClick={handleAddClick}></button>
+      </div>
+      {isAddFormShown && <EventAddForm setShown={setIsAddFormShown}/>}
+    </>
   )
 }
 

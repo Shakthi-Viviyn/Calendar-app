@@ -63,7 +63,7 @@ export default function SideBar({updateView}) {
 
     return (
         <div className="sidebar-container">
-            <SideBarIcon updateView={updateView} id={"personal"} img="images/icons/dashboard.png" key={"personal"} name={"personal"}/>
+            <SideBarIcon updateView={updateView} id={"personal"} img="images/icons/home.svg" key={"personal"} name={"personal"}/>
             {GroupIcons}
             {(GroupIcons.length < groupLimit) &&  <div onClick={handleClick} className="icon" style={IconStyles}/>}
 
